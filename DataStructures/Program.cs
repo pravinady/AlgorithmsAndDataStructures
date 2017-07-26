@@ -7,8 +7,8 @@ class Solution
 
 	static void Main(String[] args)
 	{
-        //StairCase.PrintStairCase();
-        //MinMaxSum.CalculateMinMaxSum();
+        StairCase.PrintStairCase();
+        MinMaxSum.CalculateMinMaxSum();
         BirthdayCakeCandles.CandlesBlowCount();
     }
 }

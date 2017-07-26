@@ -14533,10 +14533,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/pravinady/Projects/DataStructures/DataStructures/DataStructures.csproj",
+      "projectUniqueName": "/Users/pravinady/Github/DataStructures/DataStructures/DataStructures.csproj",
       "projectName": "DataStructures",
-      "projectPath": "/Users/pravinady/Projects/DataStructures/DataStructures/DataStructures.csproj",
-      "outputPath": "/Users/pravinady/Projects/DataStructures/DataStructures/obj",
+      "projectPath": "/Users/pravinady/Github/DataStructures/DataStructures/DataStructures.csproj",
+      "outputPath": "/Users/pravinady/Github/DataStructures/DataStructures/obj",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

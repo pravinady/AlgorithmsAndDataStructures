@@ -1,0 +1,10 @@
+/Users/pravinady/Projects/DataStructures/DataStructures/bin/Debug/netcoreapp1.1/DataStructures.deps.json
+/Users/pravinady/Projects/DataStructures/DataStructures/bin/Debug/netcoreapp1.1/DataStructures.runtimeconfig.json
+/Users/pravinady/Projects/DataStructures/DataStructures/bin/Debug/netcoreapp1.1/DataStructures.runtimeconfig.dev.json
+/Users/pravinady/Projects/DataStructures/DataStructures/bin/Debug/netcoreapp1.1/DataStructures.dll
+/Users/pravinady/Projects/DataStructures/DataStructures/bin/Debug/netcoreapp1.1/DataStructures.pdb
+/Users/pravinady/Projects/DataStructures/DataStructures/obj/Debug/netcoreapp1.1/DataStructures.csprojResolveAssemblyReference.cache
+/Users/pravinady/Projects/DataStructures/DataStructures/obj/Debug/netcoreapp1.1/DataStructures.csproj.CoreCompileInputs.cache
+/Users/pravinady/Projects/DataStructures/DataStructures/obj/Debug/netcoreapp1.1/DataStructures.AssemblyInfo.cs
+/Users/pravinady/Projects/DataStructures/DataStructures/obj/Debug/netcoreapp1.1/DataStructures.dll
+/Users/pravinady/Projects/DataStructures/DataStructures/obj/Debug/netcoreapp1.1/DataStructures.pdb

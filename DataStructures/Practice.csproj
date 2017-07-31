@@ -8,5 +8,6 @@
   <ItemGroup>
     <Folder Include="DataStructures\" />
     <Folder Include="DataStructures\LinkedList\" />
+    <Folder Include="Algorithms\" />
   </ItemGroup>
 </Project>

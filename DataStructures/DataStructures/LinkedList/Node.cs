@@ -8,7 +8,8 @@ namespace DataStructures.LinkedList
 
         public Node()
         {
-            
+            Data = 0;
+            Next = null;
         }
     }
 }

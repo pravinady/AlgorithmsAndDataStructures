@@ -22,12 +22,14 @@ class Solution
 		var list = DataStructures.LinkedList.LinkedList.GetInstance();
 		list.PrintNodes();
 
-        list.AddNode(10);
+        list.AddNodeToEnd(10);
         list.PrintNodes();
 
-        list.AddNode(20);
-        list.AddNode(30);
-
+        list.AddNodeToFront(20);
         list.PrintNodes();
+
+        list.AddNodeAfter(10, 100);
+        list.AddNodeAfter(1, 101);
+		list.PrintNodes();
     }
 }

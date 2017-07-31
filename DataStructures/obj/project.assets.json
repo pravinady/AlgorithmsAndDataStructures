@@ -14533,9 +14533,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/pravinady/Github/DataStructures/DataStructures/DataStructures.csproj",
-      "projectName": "DataStructures",
-      "projectPath": "/Users/pravinady/Github/DataStructures/DataStructures/DataStructures.csproj",
+      "projectUniqueName": "/Users/pravinady/Github/DataStructures/DataStructures/Practice.csproj",
+      "projectName": "Practice",
+      "projectPath": "/Users/pravinady/Github/DataStructures/DataStructures/Practice.csproj",
       "outputPath": "/Users/pravinady/Github/DataStructures/DataStructures/obj",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [

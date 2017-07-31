@@ -19,17 +19,29 @@ class Solution
 		Console.WriteLine("-----------------------------------");
 		Console.WriteLine("PRINT ELEMENTS IN LINKED LIST");
 		Console.WriteLine("-----------------------------------");
-		var list = DataStructures.LinkedList.LinkedList.GetInstance();
+
+        var list = new DataStructures.LinkedList.LinkedList();
+
+        list.AddNodeToEnd(20);
+        list.PrintNodes();
+
+        list.AddNodeToFront(10);
+        list.PrintNodes();
+
+        list.AddNodeAfter(10, 30);
+        list.AddNodeAfter(20, 40);
 		list.PrintNodes();
 
-        list.AddNodeToEnd(10);
+        list.DeleteNode(10);
         list.PrintNodes();
 
-        list.AddNodeToFront(20);
+        list.DeleteNode(20);
         list.PrintNodes();
 
-        list.AddNodeAfter(10, 100);
-        list.AddNodeAfter(1, 101);
+        list.DeleteNode(40);
+        list.PrintNodes();
+
+		list.DeleteNode(30);
 		list.PrintNodes();
     }
 }

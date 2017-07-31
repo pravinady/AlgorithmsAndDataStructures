@@ -19,52 +19,44 @@ namespace DataStructures.LinkedList
             return list;
         }
 
-        private static Node CreateNode(int data)
-        {
-            Node newNode = new Node();
-            newNode.Data = data;
-
-            return newNode;
-        }
-
         public void AddNodeToFront(int data)
         {
             var newNode = CreateNode(data);
             newNode.Next = Head;
             Head = newNode;
-			Console.WriteLine($"Inserted new node to the front whose value : {data}");
-		}
+            Console.WriteLine($"Inserted new node to the front whose value : {data}");
+        }
 
-		public void AddNodeToEnd(int data)
-		{
+        public void AddNodeToEnd(int data)
+        {
             var newNode = CreateNode(data);
-			if (Head == null)
-			{
+            if (Head == null)
+            {
                 Head = newNode;
-			}
-			else
-			{
+            }
+            else
+            {
                 var curNode = Head;
-				while (curNode.Next != null)
+                while (curNode.Next != null)
                 {
                     curNode = curNode.Next;
                 }
                 curNode.Next = newNode;
-			}
+            }
             Console.WriteLine($"Inserted new node to the end whose value : {data}");
-		}
+        }
 
         public void AddNodeAfter(int nodeToLookFor, int data)
         {
             bool isNodeFound = false;
             var n = Head;
-			var prevNode = new Node();
-			var nextNode = new Node();
+            var prevNode = new Node();
+            var nextNode = new Node();
             var newNode = CreateNode(data);
 
-            while(n != null)
+            while (n != null)
             {
-                if(n.Data == nodeToLookFor)
+                if (n.Data == nodeToLookFor)
                 {
                     prevNode = n;
                     nextNode = n.Next;
@@ -79,17 +71,89 @@ namespace DataStructures.LinkedList
             prevNode.Next = newNode;
 
             Console.WriteLine($"Inserted new node with value: {data} after the node: {nodeToLookFor}");
+        }
+
+        public void DeleteNode(int data)
+        {
+            if (Head == null)
+            {
+                throw new Exception("Linked List is empty");
+            }
+
+            if (IsDeleteFirstNode(data))
+            {
+                DeleteFirstNode();
+            }
+            else
+            {
+                DeleteMiddleOrLastNode(data);
+            }
+			Console.WriteLine($"Deleted node with value: {data}");
 		}
+
+        private bool IsDeleteFirstNode(int data)
+        {
+            return Head.Data == data;
+        }
+
+        private void DeleteMiddleOrLastNode(int data)
+        {
+            bool isNodeFound = false;
+            var curNode = Head;
+            var prevNode = Head;
+            Node nextNode = null;
+
+            while (curNode != null)
+            {
+                if (curNode.Data == data)
+                {
+                    isNodeFound = true;
+                    prevNode.Next = nextNode;
+                    break;
+                }
+                else
+                {
+                    prevNode = curNode;
+                    curNode = curNode.Next;
+                    if (curNode.Next != null)
+                    {
+                        nextNode = curNode.Next;
+                    }
+                }
+            }
+
+            if (!isNodeFound)
+            {
+                throw new Exception("Node is not found when trying to delete it.");
+            }
+        }
+
+        private void DeleteFirstNode()
+        {
+            Head = Head.Next;
+        }
 
         public void PrintNodes()
         {
             Console.WriteLine("Elements in the linked list are:");
             var node = Head;
-            while(node != null)
+            while (node != null)
             {
                 Console.WriteLine(node.Data);
                 node = node.Next;
             }
         }
+
+		#region Private Methods
+
+		private static Node CreateNode(int data)
+		{
+			Node newNode = new Node();
+			newNode.Data = data;
+
+			return newNode;
+		}
+
+        #endregion
     }
 }

@@ -9,5 +9,6 @@
     <Folder Include="DataStructures\" />
     <Folder Include="DataStructures\LinkedList\" />
     <Folder Include="Algorithms\" />
+    <Folder Include="DataStructures\BinaryTree\" />
   </ItemGroup>
 </Project>

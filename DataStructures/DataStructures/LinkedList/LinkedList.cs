@@ -98,33 +98,23 @@ namespace DataStructures.LinkedList
 
         private void DeleteMiddleOrLastNode(int data)
         {
-            bool isNodeFound = false;
             var curNode = Head;
-            var prevNode = Head;
-            Node nextNode = null;
+            Node prevNode = null;
 
-            while (curNode != null)
+            while (curNode != null && curNode.Data != data)
             {
-                if (curNode.Data == data)
-                {
-                    isNodeFound = true;
-                    prevNode.Next = nextNode;
-                    break;
-                }
-                else
-                {
+                
                     prevNode = curNode;
                     curNode = curNode.Next;
-                    if (curNode.Next != null)
-                    {
-                        nextNode = curNode.Next;
-                    }
-                }
             }
 
-            if (!isNodeFound)
+            if (prevNode == null)
             {
                 throw new Exception("Node is not found when trying to delete it.");
+            }
+            else
+            {
+                prevNode.Next = curNode.Next;
             }
         }
 

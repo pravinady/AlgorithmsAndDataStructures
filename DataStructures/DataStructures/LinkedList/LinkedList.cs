@@ -1,25 +1,15 @@
 ﻿using System;
-namespace DataStructures.LinkedList
+namespace Practice.DataStructures
 {
-    public class LinkedList
+    public class MyLinkedList<T>
     {
-        public Node Head;
-        public LinkedList()
+        public Node<T> Head;
+        public MyLinkedList()
         {
             Head = null;
         }
 
-        public static LinkedList GetInstance(int length = 3)
-        {
-            var list = new LinkedList();
-            list.AddNodeToEnd(1);
-            list.AddNodeToEnd(2);
-            list.AddNodeToEnd(3);
-
-            return list;
-        }
-
-        public void AddNodeToFront(int data)
+        public void AddNodeToFront(T data)
         {
             var newNode = CreateNode(data);
             newNode.Next = Head;
@@ -27,7 +17,7 @@ namespace DataStructures.LinkedList
             Console.WriteLine($"Inserted new node to the front whose value : {data}");
         }
 
-        public void AddNodeToEnd(int data)
+        public void AddNodeToEnd(T data)
         {
             var newNode = CreateNode(data);
             if (Head == null)
@@ -46,17 +36,17 @@ namespace DataStructures.LinkedList
             Console.WriteLine($"Inserted new node to the end whose value : {data}");
         }
 
-        public void AddNodeAfter(int nodeToLookFor, int data)
+        public void AddNodeAfter(T nodeToLookFor, T data)
         {
             bool isNodeFound = false;
             var n = Head;
-            var prevNode = new Node();
-            var nextNode = new Node();
+            var prevNode = new Node<T>();
+            var nextNode = new Node<T>();
             var newNode = CreateNode(data);
 
             while (n != null)
             {
-                if (n.Data == nodeToLookFor)
+                if (n.Data.Equals(nodeToLookFor))
                 {
                     prevNode = n;
                     nextNode = n.Next;
@@ -73,7 +63,7 @@ namespace DataStructures.LinkedList
             Console.WriteLine($"Inserted new node with value: {data} after the node: {nodeToLookFor}");
         }
 
-        public void DeleteNode(int data)
+        public void DeleteNode(T data)
         {
             if (Head == null)
             {
@@ -91,17 +81,17 @@ namespace DataStructures.LinkedList
 			Console.WriteLine($"Deleted node with value: {data}");
 		}
 
-        private bool IsDeleteFirstNode(int data)
+        private bool IsDeleteFirstNode(T data)
         {
-            return Head.Data == data;
+            return Head.Data.Equals(data);
         }
 
-        private void DeleteMiddleOrLastNode(int data)
+        private void DeleteMiddleOrLastNode(T data)
         {
             var curNode = Head;
-            Node prevNode = null;
+            Node<T> prevNode = null;
 
-            while (curNode != null && curNode.Data != data)
+            while (curNode != null && !curNode.Data.Equals(data))
             {
                 
                     prevNode = curNode;
@@ -136,9 +126,9 @@ namespace DataStructures.LinkedList
 
 		#region Private Methods
 
-		private static Node CreateNode(int data)
+        private static Node<T> CreateNode(T data)
 		{
-			Node newNode = new Node();
+			Node<T> newNode = new Node<T>();
 			newNode.Data = data;
 
 			return newNode;

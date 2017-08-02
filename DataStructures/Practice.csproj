@@ -10,5 +10,7 @@
     <Folder Include="DataStructures\LinkedList\" />
     <Folder Include="Algorithms\" />
     <Folder Include="DataStructures\BinaryTree\" />
+    <Folder Include="DataStructures\Queue\" />
+    <Folder Include="DataStructures\LinkedList\" />
   </ItemGroup>
 </Project>

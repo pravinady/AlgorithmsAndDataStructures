@@ -2,84 +2,122 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Practice.DataStructures.BinaryTree;
+using Practice.DataStructures;
 
-class Solution
+namespace Practice.DataStructures
 {
-
-	static void Main(String[] args)
-	{
-        //StairCase.PrintStairCase();
-
-        //MinMaxSum.CalculateMinMaxSum();
-
-        //BirthdayCakeCandles.CandlesBlowCount();
-
-        //PrintLinkedList();
-
-        PrintBinaryTree();
-    }
-
-    private static void PrintLinkedList()
+    public class Solution
     {
-		Console.WriteLine("-----------------------------------");
-		Console.WriteLine("PRINT ELEMENTS IN LINKED LIST");
-		Console.WriteLine("-----------------------------------");
 
-        var list = new DataStructures.LinkedList.LinkedList();
+        static void Main(String[] args)
+        {
+            //StairCase.PrintStairCase();
 
-        list.AddNodeToEnd(20);
-        list.PrintNodes();
+            //MinMaxSum.CalculateMinMaxSum();
 
-        list.AddNodeToFront(10);
-        list.PrintNodes();
+            //BirthdayCakeCandles.CandlesBlowCount();
 
-        list.AddNodeAfter(10, 30);
-        list.AddNodeAfter(20, 40);
-		list.PrintNodes();
+            //PrintLinkedList();
 
-        list.DeleteNode(10);
-        list.PrintNodes();
+            //PrintQueue();
 
-        list.DeleteNode(20);
-        list.PrintNodes();
+            PrintBinaryTree();
 
-        list.DeleteNode(40);
-        list.PrintNodes();
+        }
 
-		list.DeleteNode(30);
-		list.PrintNodes();
-    }
+        private static void PrintLinkedList()
+        {
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine("PRINT ELEMENTS IN LINKED LIST");
+            Console.WriteLine("-----------------------------------");
 
-    private static void PrintBinaryTree()
-    {
-		Console.WriteLine("-----------------------------------");
-		Console.WriteLine("PRINT ELEMENTS IN BINARY TREE");
-		Console.WriteLine("-----------------------------------");
-        /*
-        	tree
-            ----
-               1 < --root
-             /   \
-            2     3
-            /
-            4
-        */
+            var list = new MyLinkedList<int>();
 
-        var binaryTree = new BinaryTree(1);
-		binaryTree.Root.Left = new TreeNode(2);
-        binaryTree.Root.Left.Left = new TreeNode(4);
-        binaryTree.Root.Right = new TreeNode(3);
+            list.AddNodeToEnd(20);
+            list.PrintNodes();
 
-        Console.WriteLine("In order traversal of binary tree nodes");
-        binaryTree.PrintInorder(binaryTree.Root);
-        Console.WriteLine();
-		
-        Console.WriteLine("Pre order traversal of binary tree nodes");
-        binaryTree.PrintPreorder(binaryTree.Root);
-		Console.WriteLine();
+            list.AddNodeToFront(10);
+            list.PrintNodes();
 
-		Console.WriteLine("Post order traversal of binary tree nodes");
-        binaryTree.PrintPostorder(binaryTree.Root);
+            list.AddNodeAfter(10, 30);
+            list.AddNodeAfter(20, 40);
+            list.PrintNodes();
+
+            list.DeleteNode(10);
+            list.PrintNodes();
+
+            list.DeleteNode(20);
+            list.PrintNodes();
+
+            list.DeleteNode(40);
+            list.PrintNodes();
+
+            list.DeleteNode(30);
+            list.PrintNodes();
+        }
+
+        private static void PrintQueue()
+        {
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine("PRINT ELEMENTS IN QUEUE");
+            Console.WriteLine("-----------------------------------");
+
+            var list = new MyQueue<int>();
+
+            list.Push(20);
+            list.Push(10);
+            list.PrintNodes();
+
+            list.Pop();
+            list.PrintNodes();
+        }
+
+        private static void PrintBinaryTree()
+        {
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine("PRINT ELEMENTS IN BINARY TREE");
+            Console.WriteLine("-----------------------------------");
+            /*
+                tree
+                ----
+                   1 < --root
+                 /   \
+                2     3
+                /
+                4
+            */
+
+            var binaryTree = new BinaryTree<int>(1);
+            binaryTree.Root.Left = new TreeNode<int>(2);
+            binaryTree.Root.Left.Left = new TreeNode<int>(4);
+            binaryTree.Root.Right = new TreeNode<int>(3);
+
+            Console.WriteLine("In order traversal of binary tree nodes");
+            binaryTree.InorderTraversal();
+            Console.WriteLine();
+
+            Console.WriteLine("Pre order traversal of binary tree nodes");
+            binaryTree.PreorderTraversal();
+            Console.WriteLine();
+
+            Console.WriteLine("Post order traversal of binary tree nodes");
+            binaryTree.PostorderTraversal();
+
+   //         var binaryTree = new BinaryTree<string>("apple");
+			//binaryTree.Root.Left = new TreeNode<string>("banana");
+			//binaryTree.Root.Left.Left = new TreeNode<string>("dog");
+			//binaryTree.Root.Right = new TreeNode<string>("mat");
+
+			//Console.WriteLine("In order traversal of binary tree nodes");
+			//binaryTree.InorderTraversal();
+			//Console.WriteLine();
+
+			//Console.WriteLine("Pre order traversal of binary tree nodes");
+			//binaryTree.PreorderTraversal();
+			//Console.WriteLine();
+
+			//Console.WriteLine("Post order traversal of binary tree nodes");
+			//binaryTree.PostorderTraversal();
+        }
     }
 }

@@ -1,20 +1,44 @@
 ﻿using System;
-namespace Practice.DataStructures.BinaryTree
+namespace Practice.DataStructures
 {
-    public class BinaryTree
+    public class BinaryTree<T>
     {
-        public TreeNode Root;
+        public TreeNode<T> Root;
 
-        public BinaryTree(int key)
+        public BinaryTree(T key)
         {
-            Root = new TreeNode(key);
+            Root = new TreeNode<T>(key);
         }
+
+        #region Public Methods
+
+        public void InorderTraversal()
+        {
+            PrintInorder(Root);
+        }
+
+		public void PreorderTraversal()
+		{
+            PrintPreorder(Root);
+		}
+
+		public void PostorderTraversal()
+		{
+            PrintPostorder(Root);
+		}
+
+        public void BreadthFirstTraversal()
+        {
+            PrintBreadthFirstTraversal(Root);
+        }
+
+        #endregion
 
         #region Depth First Traversal
 
-        public void PrintInorder(TreeNode r)
+        private void PrintInorder(TreeNode<T> r)
         {
-            if(r == null)
+            if (r == null)
             {
                 return;
             }
@@ -24,30 +48,39 @@ namespace Practice.DataStructures.BinaryTree
             PrintInorder(r.Right);
         }
 
-		public void PrintPreorder(TreeNode r)
-		{
-			if (r == null)
-			{
-				return;
-			}
-			
+        private void PrintPreorder(TreeNode<T> r)
+        {
+            if (r == null)
+            {
+                return;
+            }
+
             Console.Write(r.key + " ");
-			PrintInorder(r.Left);
-			PrintInorder(r.Right);
-		}
+            PrintInorder(r.Left);
+            PrintInorder(r.Right);
+        }
 
-		public void PrintPostorder(TreeNode r)
-		{
-			if (r == null)
-			{
-				return;
-			}
+        private void PrintPostorder(TreeNode<T> r)
+        {
+            if (r == null)
+            {
+                return;
+            }
 
-			PrintInorder(r.Left);
-			PrintInorder(r.Right);
-			Console.Write(r.key + " ");
-		}
+            PrintInorder(r.Left);
+            PrintInorder(r.Right);
+            Console.Write(r.key + " ");
+        }
 
-		#endregion
-	}
+        #endregion
+
+        #region Breadth First Traversal
+
+        private void PrintBreadthFirstTraversal(TreeNode<T> r)
+        {
+            
+        }
+
+        #endregion
+    }
 }

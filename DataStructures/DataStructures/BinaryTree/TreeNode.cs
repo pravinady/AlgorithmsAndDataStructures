@@ -1,13 +1,13 @@
 ﻿using System;
-namespace Practice.DataStructures.BinaryTree
+namespace Practice.DataStructures
 {
-    public class TreeNode
+    public class TreeNode<T>
     {
-        public int key;
-        public TreeNode Left;
-        public TreeNode Right;
+        public T key;
+        public TreeNode<T> Left;
+        public TreeNode<T> Right;
 
-        public TreeNode(int key)
+        public TreeNode(T key)
         {
             this.key = key;
             Left = Right = null;

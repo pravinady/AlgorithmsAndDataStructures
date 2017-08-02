@@ -87,7 +87,7 @@ namespace Practice.DataStructures
                 4
             */
 
-            var binaryTree = new BinaryTree<int>(1);
+            var binaryTree = new MyBinaryTree<int>(1);
             binaryTree.Root.Left = new TreeNode<int>(2);
             binaryTree.Root.Left.Left = new TreeNode<int>(4);
             binaryTree.Root.Right = new TreeNode<int>(3);

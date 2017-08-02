@@ -1,11 +1,11 @@
 ﻿using System;
 namespace Practice.DataStructures
 {
-    public class BinaryTree<T>
+    public class MyBinaryTree<T>
     {
         public TreeNode<T> Root;
 
-        public BinaryTree(T key)
+        public MyBinaryTree(T key)
         {
             Root = new TreeNode<T>(key);
         }

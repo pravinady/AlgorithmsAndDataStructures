@@ -14,22 +14,26 @@ namespace Practice.DataStructures
 
         public void InorderTraversal()
         {
-            PrintInorder(Root);
+			Console.WriteLine("In order traversal of binary tree nodes");
+			PrintInorder(Root);
         }
 
 		public void PreorderTraversal()
 		{
-            PrintPreorder(Root);
+			Console.WriteLine("Pre order traversal of binary tree nodes");
+			PrintPreorder(Root);
 		}
 
 		public void PostorderTraversal()
 		{
-            PrintPostorder(Root);
+			Console.WriteLine("Post order traversal of binary tree nodes");
+			PrintPostorder(Root);
 		}
 
         public void BreadthFirstTraversal()
         {
-            PrintBreadthFirstTraversal(Root);
+			Console.WriteLine("Breadth First Traversal of binary tree nodes");
+			PrintBreadthFirstTraversal(Root);
         }
 
         #endregion
@@ -76,9 +80,27 @@ namespace Practice.DataStructures
 
         #region Breadth First Traversal
 
-        private void PrintBreadthFirstTraversal(TreeNode<T> r)
+        private void PrintBreadthFirstTraversal(TreeNode<T> root)
         {
-            
+            var queue = new MyQueue<TreeNode<T>>();
+            Console.WriteLine(root.key);
+            queue.Push(root);
+
+            while (!queue.IsEmpty())
+            {
+                var node = queue.Pop();
+
+                if(node.Data.Left != null)
+                {
+                    Console.WriteLine(node.Data.Left.key);
+                    queue.Push(node.Data.Left);
+                }
+                if(node.Data.Right != null)
+                {
+                    Console.WriteLine(node.Data.Right.key);
+                    queue.Push(node.Data.Right);
+				}
+            }
         }
 
         #endregion

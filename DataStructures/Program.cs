@@ -92,32 +92,17 @@ namespace Practice.DataStructures
             binaryTree.Root.Left.Left = new TreeNode<int>(4);
             binaryTree.Root.Right = new TreeNode<int>(3);
 
-            Console.WriteLine("In order traversal of binary tree nodes");
             binaryTree.InorderTraversal();
             Console.WriteLine();
 
-            Console.WriteLine("Pre order traversal of binary tree nodes");
             binaryTree.PreorderTraversal();
             Console.WriteLine();
 
-            Console.WriteLine("Post order traversal of binary tree nodes");
             binaryTree.PostorderTraversal();
+            Console.WriteLine();
 
-   //         var binaryTree = new BinaryTree<string>("apple");
-			//binaryTree.Root.Left = new TreeNode<string>("banana");
-			//binaryTree.Root.Left.Left = new TreeNode<string>("dog");
-			//binaryTree.Root.Right = new TreeNode<string>("mat");
-
-			//Console.WriteLine("In order traversal of binary tree nodes");
-			//binaryTree.InorderTraversal();
-			//Console.WriteLine();
-
-			//Console.WriteLine("Pre order traversal of binary tree nodes");
-			//binaryTree.PreorderTraversal();
-			//Console.WriteLine();
-
-			//Console.WriteLine("Post order traversal of binary tree nodes");
-			//binaryTree.PostorderTraversal();
+            binaryTree.BreadthFirstTraversal();
+            Console.WriteLine();
         }
     }
 }

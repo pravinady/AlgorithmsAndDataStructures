@@ -10,6 +10,10 @@ namespace Practice.DataStructures
 			Head = null;
 		}
 
+        public bool IsEmpty()
+        {
+            return Head == null;
+        }
         public Node<T> Push(T data)
 		{
 			var newNode = CreateNode(data);
@@ -26,7 +30,7 @@ namespace Practice.DataStructures
 				}
 				curNode.Next = newNode;
 			}
-			Console.WriteLine($"Pushed new node : {data}");
+			Console.WriteLine($"Pushed a node");
 
             return newNode;
 		}
@@ -41,7 +45,7 @@ namespace Practice.DataStructures
             var deletedNode = Head;
 			Head = Head.Next;
 
-            Console.WriteLine($"Deleted node with value: {deletedNode.Data}");
+            Console.WriteLine($"Popped a node");
             return deletedNode;
 		}
 
